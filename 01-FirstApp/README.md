@@ -16,6 +16,13 @@ kubectl get pods
 kubectl describe pods hello-k8s
 ```
 
+## Expose the pod to NodePort
+```
+kubectl expose pod hello-k8s --type=NodePort
+kubectl get svc
+```
+
+
 Note Point : In Case you are getting imagepull error stating that you have reached to max limit of downloads, then apply the following solution. 
 
 # Docker login
