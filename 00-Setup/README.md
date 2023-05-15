@@ -1,14 +1,36 @@
 # In the following demo will be setting up 3 Node Kubernetes Cluster ( 1 Master & 2 Workers ) 
 
 ## For this demo will be required to have following tools installed. 
-1.	Azure Login
-2.	Azure Pass
+1.	Cloud Lab
+2.	Vagrant & Virtual Box
 3.	Cmder / Git Bash 
+
+
+
+
+## Open the cmder / powershell terminal, then go to 
+```
+cd devops-lab/vagrant-setup/devops
+vagrant.exe up
+
+
+vagrant.exe status
+Current machine states:
+
+master                    running (virtualbox)
+worker1                   running (virtualbox)
+worker2                   running (virtualbox)
+```
+```
+vagrant ssh <nodename>
+```
+
+
 
 ## First clone this repository on your windows machine.
 
 ```
-git clone https://github.com/amitvashisttech/k8s-advance-vmaware-27-March-2023.git
+git clone https://github.com/amitvashisttech/kubenetes-operators-radisys-15-May-2023.git
 ``` 
 
 ## Now provision three virtual machines with following commands:
@@ -32,8 +54,8 @@ Note :
 ```
 vagrant.exe ssh master
 sudo su - 
-git clone https://github.com/amitvashisttech/k8s-advance-vmaware-27-March-2023.git
-cd k8s-advance-vmaware-27-March-2023/02-K8s/00-Setup
+git clone https://github.com/amitvashisttech/kubenetes-operators-radisys-15-May-2023.git
+cd kubenetes-operators-radisys-15-May-2023/00-Setup
 sh install-k8s-master-node.sh
 
 ---
