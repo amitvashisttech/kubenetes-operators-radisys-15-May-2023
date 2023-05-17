@@ -8,6 +8,7 @@ apt-get update ; apt-get install pip -y
 ### Install Ansible 
 ```
 pip install ansible
+pip install ansible-runner
 ```
 
 ### Kubernetes Collections 
