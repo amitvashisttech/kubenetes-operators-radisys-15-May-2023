@@ -1,0 +1,14 @@
+---
+- name: create Example configmap
+  kubernetes.core.k8s:
+    definition:
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: 'test-data'
+        namespace: '{{ ansible_operator_meta.namespace }}'
+      data:
+        hello: world
+
+
+

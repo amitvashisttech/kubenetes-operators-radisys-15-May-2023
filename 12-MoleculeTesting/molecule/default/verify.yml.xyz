@@ -1,0 +1,13 @@
+---
+
+- name: Verify
+  hosts: localhost
+  connection: local
+  tasks:
+    - debug: var=cm
+      vars:
+        cm: '{{ lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace=namespace, resource_name="test-data") }}'
+    - assert:
+        that: cm.data.hello == 'world'
+      vars:
+        cm: '{{ lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace=namespace, resource_name="test-data") }}'

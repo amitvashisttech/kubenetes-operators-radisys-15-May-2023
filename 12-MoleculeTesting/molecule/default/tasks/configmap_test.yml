@@ -1,0 +1,21 @@
+---
+- name: Create the cache.example.com/v1alpha1.Configmap
+  k8s:
+    state: present
+    namespace: '{{ namespace }}'
+    definition: "{{ lookup('template', '/'.join([samples_dir, cr_file])) | from_yaml }}"
+    wait: yes
+    wait_timeout: 300
+    wait_condition:
+      type: Successful
+      status: "True"
+  vars:
+    cr_file: 'cache_v1alpha1_configmap.yaml'
+
+- debug: var=cm
+  vars:
+    cm: '{{ lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace=namespace, resource_name="test-data") }}'
+- assert:
+    that: cm.data.hello == 'world'
+  vars:
+    cm: '{{ lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace=namespace, resource_name="test-data") }}'    
