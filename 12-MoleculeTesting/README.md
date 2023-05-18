@@ -46,7 +46,7 @@ molecule/
 ## Devlop the Configmap Operators
 
 ```
-vim  roles/configmap/defaults/main.yml 
+vim  roles/configmap/tasks/main.yml 
 ```
 
 Sample
@@ -65,6 +65,17 @@ Sample
     state: "{{ state }}"
   ignore_errors: true
 ```
+
+```
+vim  roles/configmap/defaults/main.yml
+```
+
+Sample
+```
+---
+state: present
+```
+
 
 ## Update the Cache Deployment file 
 ```
