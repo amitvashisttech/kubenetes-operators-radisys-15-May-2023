@@ -18,7 +18,7 @@ operator-sdk create api --group cache --version v1alpha1 --kind Configmap --gene
 pip install molecule 
 ```
 ```
-pip install kustomize
+snap install kustomize
 ```
 
 ## List of the molecule Genrate
