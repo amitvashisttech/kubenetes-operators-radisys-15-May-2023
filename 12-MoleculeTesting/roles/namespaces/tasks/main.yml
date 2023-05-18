@@ -1,9 +1,0 @@
----
-# tasks file for namespaces
-- name: Create a k8s namespace is "{{ state }}"
-  kubernetes.core.k8s:
-    name: testing
-    api_version: v1
-    kind: Namespace
-    state: "{{ state }}"
-  ignore_errors: true

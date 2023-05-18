@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/name: clusterrole
     app.kubernetes.io/instance: configmap-viewer-role
     app.kubernetes.io/component: rbac
-    app.kubernetes.io/created-by: configmap-operator
-    app.kubernetes.io/part-of: configmap-operator
+    app.kubernetes.io/created-by: operator-testing
+    app.kubernetes.io/part-of: operator-testing
     app.kubernetes.io/managed-by: kustomize
   name: configmap-viewer-role
 rules:

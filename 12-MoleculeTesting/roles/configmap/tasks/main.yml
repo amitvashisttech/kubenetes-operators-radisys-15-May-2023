@@ -1,14 +1,13 @@
 ---
-- name: create Example configmap
+- name: ConfigMap Example is "{{ state }}"
   kubernetes.core.k8s:
-    definition:
-      apiVersion: v1
+    definition: 
       kind: ConfigMap
-      metadata:
-        name: 'test-data'
-        namespace: '{{ ansible_operator_meta.namespace }}'
+      apiVersion: v1
+      metadata: 
+        name: my-configmap
+        namespace: default
       data:
-        hello: world
-
-
-
+        key: "Hello world"  
+    state: "{{ state }}"
+  ignore_errors: true

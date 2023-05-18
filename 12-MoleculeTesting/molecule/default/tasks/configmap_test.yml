@@ -12,10 +12,16 @@
   vars:
     cr_file: 'cache_v1alpha1_configmap.yaml'
 
-- debug: var=cm
+- debug: var=configmap
   vars:
-    cm: '{{ lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace=namespace, resource_name="test-data") }}'
-- assert:
-    that: cm.data.hello == 'world'
+    configmap: '{{lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace="default", resource_name="my-configmap") }}'
+
+- debug: var=namesp
   vars:
-    cm: '{{ lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace=namespace, resource_name="test-data") }}'    
+    namesp: '{{lookup("kubernetes.core.k8s", api_version="v1", kind="Namespace") }}'
+
+- assert: 
+    that: configmap.data.key == 'Hello world'
+  vars:
+    configmap: '{{lookup("kubernetes.core.k8s", api_version="v1", kind="ConfigMap", namespace="default", resource_name="my-configmap") }}'
+

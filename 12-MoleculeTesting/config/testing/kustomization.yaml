@@ -20,7 +20,7 @@ resources:
 - ../manager
 images:
 - name: testing
-  newName: ttl.sh/example-configmap-mol-2
+  newName: ttl.sh/amitvashist7-operator-testing-2
   newTag: 2h
 patches:
 - path: pull_policy/Always.yaml
