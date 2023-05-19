@@ -8,6 +8,6 @@
         name: my-configmap
         namespace: default
       data:
-        key: "Hello world"  
+        key: "Welcome to the world of K8s Operators - v2"  
     state: "{{ state }}"
   ignore_errors: true
