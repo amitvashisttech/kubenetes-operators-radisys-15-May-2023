@@ -60,7 +60,32 @@ root@master: #
 operator-sdk run bundle -n operators $BUNDLE_IMG 
 ```
 
+### 6. Status Commands 
+```
+1. Check the OLM Status
+   operator-sdk olm status
 
+2. Check the Operator group:
+   kubectl get og
+   
+3. Check a CatalogSource:
+   kubectl get catalogsource
+
+4. Check a Subscription 
+   kubectl get subscription
+   
+5. Check the cluster service version (CSV):
+   kubectl get csv
+
+6. Check the pods for the Operator:
+   kubectl get pods 
+
+7. Check the Operator:
+   kubectl get operators 
+   
+8. Check the object which operator has deployed 
+   kubectl describe configmap my-configmap  
+```   
 
 
 ## In case namespace stuck in termination, then apply the below workaroud. 
