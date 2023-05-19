@@ -150,6 +150,6 @@ root@master: #
 
 ### 5. [Deploy Bundle Image with Operator SDK on K8s]
 ```
-operator-sdk run bundle-upgrade -n operators $BUNDLE_IMG 
+operator-sdk run bundle-upgrade -n operators $BUNDLE_IMG --timeout=15m 
 ```
 
